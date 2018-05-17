@@ -8,7 +8,9 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Homwork App</h1>
         </header>
-        {this.props.children}
+        <div className="App-content">
+          {this.props.children}
+        </div>
       </div>
     );
   }
