@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import Spinner from '../Spinner';
 import HomeworkItem from '../HomeworkItem';
-// import HomeworkListItem from '../HomeworkListItem';
 import './style.css';
 
 import { LISTING_API } from '../../const/API'
@@ -21,13 +20,11 @@ export default class Listing extends Component {
 
   componentWillMount() {
     axios.get(LISTING_API)
-      .then(({ data, status }) => {
-        if (status === 200) {
-          this.setState({
-            homeworks: data,
-            status: 'success',
-          });
-        }
+      .then(({ data }) => {
+        this.setState({
+          homeworks: data,
+          status: 'success',
+        });
       }).catch(err => {
         this.setState({ error: err.message });
       })

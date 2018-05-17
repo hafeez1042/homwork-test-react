@@ -11,7 +11,7 @@ export default () => {
             <Router>
                 <Switch>
                     <Route exact path="/" component={Listing} />
-                    <Route path="/edit" component={Details} />
+                    <Route path="/edit/:id" component={Details} />
                 </Switch>
             </Router>
         </App>
