@@ -1,3 +1,7 @@
 .listing-page .content{
   padding-top: 20px;
 }
+
+.listing-page .list, .listing-page .grid {
+  margin-bottom: 10px;
+}

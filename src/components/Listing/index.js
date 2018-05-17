@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Spinner from '../Spinner';
-import HomeworkGridItem from '../HomeworkGridItem';
+import HomeworkItem from '../HomeworkItem';
 // import HomeworkListItem from '../HomeworkListItem';
 import './style.css';
 
@@ -74,16 +74,13 @@ export default class Listing extends Component {
         </div>
       );
     }
-    if(this.state.listType === 'grid') {
-      return this.state.homeworks.map(item => {
-        return (
-          <div className="col-md-3">
-            <HomeworkGridItem key={item.id} {...item} />
-          </div>
-        )
-      })
-    } else {
-
-    }
+    return this.state.homeworks.map(item => {
+      return (
+        <div className={`${this.state.listType === 'grid' ? 'col-md-3 col-sm-6 grid' : 'col-md-12 list'}`}>
+          <HomeworkItem key={item.id} {...item} />
+        </div>
+      )
+    })
+    
   }
 }
